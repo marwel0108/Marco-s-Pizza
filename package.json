@@ -1,0 +1,24 @@
+{
+  "name": "pizzeria",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "express-myconnection": "^1.0.4",
+    "handlebars": "^4.7.6",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "stripe": "^8.126.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}

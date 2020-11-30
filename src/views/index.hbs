@@ -1,0 +1,75 @@
+<main>
+    <section class="about" id="servicio">
+        <div class="contenedor">
+            <h3>Nuestras pizzas</h3>
+            <p class="after">Siempre mejorando para ti</p>
+            <div class="servicios">
+                <div class="content-all">
+                    <div class="content-carrousel">
+                        <figure><img src="img/img1.jpg"></figure>
+                        <figure><img src="img/img2.jpg"></figure>
+                        <figure><img src="img/Especial.jpg"></figure>
+                        <figure><img src="img/img4.jpg"></figure>
+                        <figure><img src="img/img5.jpg"></figure>
+                        <figure><img src="img/Pepperoni.jpg"></figure>
+                        <figure><img src="img/Hawaiana.jpg"></figure>
+                        <figure><img src="img/img8.jpg"></figure>
+                        <figure><img src="img/img9.jpg"></figure>
+                        <figure><img src="img/img10.jpg"></figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contenedor" id="trabajo">
+        <div class="pizzas">
+            {{#each pizzas}}
+            <div class="card" style="width: 18rem;">
+                <img src="img/{{nombre}}.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{nombre}}</h5>
+                    <p class="card-text">{{descripcion}}</p>
+                    <form action="/comprar/{{nombre}}" method="POST">
+                        <input type="text" class="precio" name="precio" disabled value="Precio: ${{precio}}">
+                        <div class="seleccion">
+                            <select name="tamaños" id="tamaños">
+                                <option value="pequeña">Pequeña</option>
+                                <option value="mediana">Mediana</option>
+                                <option value="grande">Grande</option>
+                            </select>
+                            <input type="number" id="cantidad" name="numero" value="1" min="1" max="50" step="1" />
+                        </div>
+                        <button type="submit" class="btn btn-warning">Pagar</button>
+                    </form>
+
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </section>
+    <section class="contenedor" id="equipo">
+        <h3>Nuestro equipo</h3>
+        <p class="after">Conoce a la gente asombrosa y creativa</p>
+        <div class="cards">
+            <div class="content-card">
+                <div class="people">
+                    <img src="img/ari.jpg" alt="">
+                </div>
+                <div class="texto-team">
+                    <h4>La Aris</h4>
+                    <a href="https://www.facebook.com/arizbeth.garciamartinez.7" style="color:#ff8000">Arizbeth García
+                        Martínez</a>
+                </div>
+            </div>
+            <div class="content-card">
+                <div class="people">
+                    <img src="img/emma.jpg" alt="">
+                </div>
+                <div class="texto-team">
+                    <h4>El Emma</h4>
+                    <a href="https://www.facebook.com/Marwel0801" style="color:#ff8000">Emmanuel Arellano Bravo.</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

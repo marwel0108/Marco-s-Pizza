@@ -1,0 +1,35 @@
+<main class="main">
+        {{#each pizza}}
+        <form class="main-form" action="/comprar/realizarPago/:pizza" method="post">
+            <div class="contenedor-pizza">
+                <h3 class="info">{{nombre}}</h3>
+                <img src="/img/{{nombre}}.jpg" alt="Pizza: {{nombre}}"><br>
+                <strong>Precio: </strong>$<input type="text" class="input-form" name="importe" value="{{importe}}"><br>
+                <strong>Cantidad: </strong><input type="text" class="input-form" name="cantidad" value="{{cantidad}}">
+                <strong>Tamaño: </strong><input type="text" class="input-form" name="cantidad" value="{{size}}">
+            </div>
+            <div class="contenedor-form">
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Nombre</label>
+                    <input type="text" name="nombre" class="form-control" id="exampleFormControlInput1"
+                        placeholder="Nombres Apellidos">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Dirección</label>
+                    <input type="text" name="direccion" class="form-control" id="exampleFormControlInput1"
+                        placeholder="Colonia Calle Ciudad">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Detalles de la entrega</label>
+                    <textarea class="form-control" name="descripcion" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" id="hs"
+                    data-key="pk_test_51HnbioIuQrTycj1NWF8Ju8FpURxSnjN1BBdjiF39xzeBKtGYqwkABMTdTJKOy9ugtnCunwUQZYkfRoj2CYocuyap00GBKZ37Ux"
+                    data-name="Marco's Pizza" data-description="Pizza" data-image="/img/{{nombre}}.jpg"
+                    data-amount="{{cambioImporte importe}}"
+                    data-locale="auto">
+                    </script>
+            </div>
+        </form>
+        {{/each}}
+</main>
